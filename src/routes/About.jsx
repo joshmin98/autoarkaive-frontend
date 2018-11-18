@@ -18,31 +18,36 @@ const team = [
     name: 'Addison A.',
     role: 'Design and Frontend',
     roleDescription: 'test',
-    bio: 'test'
+    bio: 'test',
+    image: '../images/images/addison.jpg'
   },
   {
     name: 'Anna S.',
     role: 'Backend',
     roleDescription: 'test',
-    bio: 'test'
+    bio: 'test',
+    image: '../images/images/addison.jpg'
   },
   {
     name: 'Jamie S.',
     role: 'Backend',
     roleDescription: 'test',
-    bio: 'test'
+    bio: 'test',
+    image: '../images/images/jamie.jpg'
   },
   {
     name: 'Josh M.',
     role: 'Fullstack',
     roleDescription: 'test',
-    bio: 'test'
+    bio: 'test',
+    image: '../images/images/joshmin.jpg'
   },
   {
     name: 'Sai A.',
     role: 'Backend',
     roleDescription: 'test',
-    bio: 'test'
+    bio: 'test',
+    image: '../images/images/sai.jpg'
   }
 ];
 
@@ -56,13 +61,13 @@ let About = props => {
       >
         {team.map((member, idx) => {
           return(
-            <Grid item xs>
+            <Grid item xs key={idx}>
               <Bio
-                key={idx}
                 name={member.name}
                 role={member.role}
                 roleDescription={member.roleDescription}
                 shortBio={member.bio}
+                imgSrc={'../images/images/joshmin.jpg'}
               />
             </Grid>
           );

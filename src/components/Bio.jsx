@@ -58,8 +58,9 @@ class Bio extends Component {
             subheader={this.props.role}
           />
           <CardMedia
-            className={this.props.classes.media}
+            className={this.props.classes.cardMedia}
             title={this.props.name}
+            image={this.props.imgSrc}
           />
           <CardContent>
             <Typography component='p'>
