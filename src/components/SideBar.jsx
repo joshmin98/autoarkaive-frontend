@@ -21,7 +21,7 @@ const styles = {
 
 const ROUTE_MAP = {
   '/': 'Home',
-  '/about': 'About',
+  '/about': 'Developers',
   '/autoarkaive': 'Application'
 };
 

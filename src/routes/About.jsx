@@ -67,7 +67,7 @@ let About = props => {
                 role={member.role}
                 roleDescription={member.roleDescription}
                 shortBio={member.bio}
-                imgSrc={'../images/images/joshmin.jpg'}
+                imgSrc={member.image}
               />
             </Grid>
           );
