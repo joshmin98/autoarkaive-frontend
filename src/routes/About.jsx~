@@ -1,0 +1,53 @@
+import React from 'react';
+import Bio from '../components/Bio';
+
+const team = [
+  {
+    name: 'Addison A.',
+    role: 'Design and Frontend',
+    roleDescription: 'test',
+    bio: 'test'
+  },
+  {
+    name: 'Anna S.',
+    role: 'Backend',
+    roleDescription: 'test',
+    bio: 'test'
+  },
+  {
+    name: 'Jamie S.',
+    role: 'Backend',
+    roleDescription: 'test',
+    bio: 'test'
+  },
+  {
+    name: 'Josh M.',
+    role: 'Fullstack',
+    roleDescription: 'test',
+    bio: 'test'
+  },
+  {
+    name: 'Sai A.',
+    role: 'Backend',
+    roleDescription: 'test',
+    bio: 'test'
+  }
+];
+
+export default () => {
+  return(
+    <div>
+      {team.map((member, idx) => {
+        return(
+          <Bio
+            key={idx}
+            name={member.name}
+            role={member.role}
+            roleDescription={member.roleDescription}
+            shortBio={member.bio}
+          />
+        );
+      })}
+    </div>
+  );
+}
