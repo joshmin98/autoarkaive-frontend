@@ -34,7 +34,7 @@ const styles = theme => ({
     boxShadow: 'none',
     borderRadius: 0,
     padding: 10,
-    fontFamily: 'Sans',
+    fontFamily: 'Roboto',
     textTransform: 'uppercase',
     cursor: 'pointer',
   },
