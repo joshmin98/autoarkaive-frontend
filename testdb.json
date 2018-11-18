@@ -1,0 +1,53 @@
+{
+  "endpointThatIHit": {
+    "name": "Josh",
+    "classes": [
+      {
+	"class": "CSCI201",
+	"time": "9:00AM",
+	"location": "SAL109",
+	"code": "KR21K"
+      },
+      {
+	"class": "CSCI201",
+	"time": "9:00AM",
+	"location": "SAL109",
+	"code": "KR21K"
+      },
+      {
+	"class": "CSCI201",
+	"time": "9:00AM",
+	"location": "SAL109",
+	"code": "KR21K"
+      },
+      {
+	"class": "CSCI201",
+	"time": "9:00AM",
+	"location": "SAL109",
+	"code": "KR21K"
+      }
+    ]
+  },
+  "login": {
+    "arkaiveAccountExists": false
+  },
+  "arkaivelogin": {
+    "isValidArkaiveAccount": true
+  },
+  "addClass": {
+    "successfullyAdded": true,
+    "message": "Added class: CSCI201"
+  },
+  "fetchClasses": {
+    "classes": [
+      {
+	"class": "CSCI201",
+	"courseCode": "KR21K"
+      },
+      {
+	"class": "CSCI201",
+	"courseCode": "KR21K"
+      }
+    ]
+  }
+}
