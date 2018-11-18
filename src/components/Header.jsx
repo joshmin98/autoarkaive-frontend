@@ -27,8 +27,10 @@ const styles = theme => ({
     marginRight: 20
   },
   loginButton: {
+    fontSize: 15,
     border: 0,
     background: 'none',
+    color: 'white',
     boxShadow: 'none',
     borderRadius: 0,
     padding: 10,
