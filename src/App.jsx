@@ -118,4 +118,4 @@ class App extends Component {
 
 export default App;
 
-export const SERVER = 'http://localhost:8080/AutoArkaive/UtilityServlet';
+export const SERVER = 'http://localhost:8080/UtilityServlet';
