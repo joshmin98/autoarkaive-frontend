@@ -17,7 +17,7 @@ const styles = theme => ({
   },
   cardMedia: {
     height: 0,
-    paddingTop: '56.25%'
+    paddingTop: '90%'
   },
   actions: {
     display: 'flex'

@@ -19,6 +19,7 @@ class App extends Component {
     this.state = {
       loggedIn: false,
       email: null,
+      name: null,
       routes: [
         '/',
         '/about'
@@ -70,9 +71,10 @@ class App extends Component {
     }
   }
 
-  handleLogin = email => {
+  handleLogin = (email, name) => {
     this.setState({
       email: email,
+      name: name,
       loggedIn: true,
       routes: ['/', '/about', '/autoarkaive']
     });
@@ -82,6 +84,7 @@ class App extends Component {
   handleLogout = () => {
     this.setState({
       email: null,
+      name: null,
       loggedIn: false,
       routes: ['/', '/about']
     });
@@ -115,4 +118,4 @@ class App extends Component {
 
 export default App;
 
-export const SERVER = 'http://localhost:9999';
+export const SERVER = 'http://localhost:8080/AutoArkaive/UtilityServlet';

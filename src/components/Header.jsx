@@ -52,7 +52,8 @@ class Header extends Component {
       routes: this.props.routes,
       sideBarOpen: false,
       arkaiveLoginModalOpen: false,
-      arkaiveLoggingIn: false
+      arkaiveLoggingIn: false,
+      name: null
     };
   }
 
@@ -67,15 +68,17 @@ class Header extends Component {
 
   handleLogin = googleResp => {
     const email = googleResp.profileObj.email;
-    axios.get(SERVER + '/login', {
+    const name = googleResp.profileObj.name;
+    this.setState({ name: name });
+    axios.get(SERVER, {
       params: {
-        command: 'checkuser',
+        command: 'checkUser',
         email: email
       }
     }).then(resp => {
       const accountExists = resp.data.arkaiveAcccountExists;
       if(accountExists) {
-        this.props.onLogin(email);
+        this.props.onLogin(email, name);
       } else {
         this.handleFormOpen();
       }
@@ -84,18 +87,20 @@ class Header extends Component {
 
   handleArkaiveLogin = accountInfo => {
     this.setState({ arkaiveLoggingIn: true });
-    axios.get(SERVER + '/arkaiveLogin', {
+    axios.get(SERVER, {
       params: {
         command: 'addUser',
-        username: accountInfo.email,
-        password: accountInfo.password
+        arkaive_username: accountInfo.email,
+        arkaive_password: accountInfo.password,
+        fullname: '',
+        picUrl: 'none',
+        email: accountInfo.email
       }
     }).then(resp => {
-      console.log(resp.data);
       this.setState({ arkaiveLoggingIn: false });
       resp = resp.data;
       if(resp.isValidArkaiveAccount) {
-        this.props.onLogin(accountInfo.email);
+        this.props.onLogin(accountInfo.email, this.state.name);
       } else {
         alert('Error: Invalid Arkaive account info!');
       }

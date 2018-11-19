@@ -39,7 +39,8 @@ class AutoArkaive extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
+      email: null,
+      name: null,
       fetchingClasses: true,
       formModalOpen: false,
       addingClass: false
@@ -57,7 +58,8 @@ class AutoArkaive extends Component {
 
   hydrateStateWithLocalStorage = () => {
     this.setState({
-      email: localStorage.getItem('email').replace(/['"]+/g, '')
+      email: localStorage.getItem('email').replace(/['"]+/g, ''),
+      name: localStorage.getItem('name').replace(/['"]+/g, '')
     });
   }
 
@@ -79,20 +81,22 @@ class AutoArkaive extends Component {
       const lat = resp.lat;
       const long = resp.lng;
       // Adding class to server
-      axios.get(SERVER + '/addClass', {
+      axios.get(SERVER, {
         params: {
           command: 'addClass',
           email: this.state.email,
-          class: className,
-          code: code,
-          startTime: startTime,
-          endTime: endTime,
+          fullname: this.state.name,
+          classname: className,
+          courseCode: code,
+          checkinStartTime: startTime,
+          checkinEndTime: endTime,
           latitude: lat,
-          longitude: long
+          longitude: long,
+          altitude: 60
         }
       }).then(resp => {
         resp = resp.data;
-        if(resp.successfullyAdded) {
+        if(resp.classWasAdded) {
           this.fetchClasses();
         } else {
           alert('Error: Could not add class!');
@@ -107,7 +111,7 @@ class AutoArkaive extends Component {
 
   fetchClasses = () => {
     this.setState({ fetchingClasses: true });
-    axios.get(SERVER + '/endpointThatIHit', {
+    axios.get(SERVER, {
       params: {
         command: 'fetchClasses',
         email: this.state.email
