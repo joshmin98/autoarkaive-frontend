@@ -92,7 +92,7 @@ class Header extends Component {
         command: 'addUser',
         arkaive_username: accountInfo.email,
         arkaive_password: accountInfo.password,
-        fullname: '',
+        fullname: this.state.name,
         picUrl: 'none',
         email: accountInfo.email
       }
@@ -126,6 +126,7 @@ class Header extends Component {
   }
 
   render() {
+    console.log(SERVER);
     let LoginButton = this.state.loggedIn ?
         <Button
           color='inherit'
