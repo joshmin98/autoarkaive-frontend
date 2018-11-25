@@ -69,17 +69,32 @@ class FormModal extends Component {
           {this.props.instructions}
         </DialogContentText>
         {this.props.inputs.map((input, idx) => {
-          return (
-            <TextField
-              label={input}
-              className={this.props.classes.textField}
-              value={this.state[input]}
-              onChange={this.handleChange(input)}
-              margin='normal'
-              variant='outlined'
-              key={idx}
-            />
-          );
+          if(input == 'password') {
+            return (
+              <TextField
+                label={input}
+                className={this.props.classes.textField}
+                value={this.state[input]}
+                onChange={this.handleChange(input)}
+                margin='normal'
+                variant='outlined'
+                type='password'
+                key={idx}
+              />
+            );
+          } else {
+            return (
+              <TextField
+                label={input}
+                className={this.props.classes.textField}
+                value={this.state[input]}
+                onChange={this.handleChange(input)}
+                margin='normal'
+                variant='outlined'
+                key={idx}
+              />
+            );
+          }
         })}
         <DialogActions>
           <Button onClick={this.props.handleClose} color='primary'>

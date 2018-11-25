@@ -43,17 +43,18 @@ class AutoArkaive extends Component {
       name: null,
       fetchingClasses: true,
       formModalOpen: false,
-      addingClass: false
+      addingClass: false,
+      classList: []
     };
   }
 
   componentWillMount() {
     this.hydrateStateWithLocalStorage();
+    this.setState({ fetchingClasses: true });
+    this.fetchClasses();
   }
 
   componentDidMount() {
-    this.setState({ fetchingClasses: true });
-    this.fetchClasses();
   }
 
   hydrateStateWithLocalStorage = () => {
@@ -117,12 +118,11 @@ class AutoArkaive extends Component {
         email: this.state.email
       }
     }).then(resp => {
-      resp = resp.data;
-      console.log(resp);
       this.setState({
-        classList: resp.classes,
+        classList: resp.data.classList,
         fetchingClasses: false
       });
+      console.log(this.state);
     });
   }
 

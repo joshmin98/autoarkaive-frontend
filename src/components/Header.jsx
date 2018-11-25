@@ -126,7 +126,6 @@ class Header extends Component {
   }
 
   render() {
-    console.log(SERVER);
     let LoginButton = this.state.loggedIn ?
         <Button
           color='inherit'
@@ -134,7 +133,7 @@ class Header extends Component {
           Logout
         </Button> :
         <GoogleLogin
-          clientId="136499966885-afs40lb1al0qk7qrm36sgd2lk50k7g1a.apps.googleusercontent.com"
+          clientId="352877215320-oshj4gaol59ludv1p30o82jarubueq62.apps.googleusercontent.com"
           onSuccess={resp => this.handleLogin(resp)}
           buttonText='Login'
           className={this.props.classes.loginButton}

@@ -80,8 +80,8 @@ class ClassModal extends Component {
   render() {
     let arkaiveClasses = [];
     this.props.classList.forEach(c => arkaiveClasses.push({
-      class: c.class,
-      code: c.code
+      className: c.className,
+      courseCode: c.courseCode
     }));
 
     let FormContent =
@@ -119,9 +119,9 @@ class ClassModal extends Component {
                 return (
                   <MenuItem
                     key={idx}
-                    value={`${c.class} ${c.code}`}
+                    value={`${c.className} ${c.courseCode}`}
                   >
-                    {c.class} - {c.code}
+                    {c.className} - {c.courseCode}
                   </MenuItem>
                 );
               })}

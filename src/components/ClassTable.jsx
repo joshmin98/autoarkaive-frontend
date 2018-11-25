@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -31,19 +31,21 @@ let ClassTable = props => {
         </TableHead>
         <TableBody>
           {props.classList.map((row, idx) => {
+            let time = row.time ? row.time : 'N/A';
+            let location = row.location ? row.location : 'N/A';
             return (
               <TableRow key={idx}>
                 <TableCell scope='row'>
-                  {row.class}
+                  {row.className}
                 </TableCell>
                 <TableCell scope='row'>
-                  {row.location}
+                  {location}
                 </TableCell>
                 <TableCell scope='row'>
-                  {row.time}
+                  {time}
                 </TableCell>
                 <TableCell scope='row'>
-                  {row.code}
+                  {row.courseCode}
                 </TableCell>
               </TableRow>
             );

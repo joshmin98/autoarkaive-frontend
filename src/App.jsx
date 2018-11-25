@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route  } from 'react-router-dom';
-
+import { BrowserRouter as Router, Route, Switch  } from 'react-router-dom';
 import Header from './components/Header';
 import Login from './routes/Login';
 import About from './routes/About';
 import AutoArkaive from './routes/AutoArkaive.jsx';
-
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import './App.css';
 
 const COMPONENT_MAP = {
   '/': Login,
@@ -94,23 +94,32 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <Router>
-          <>
-            <Header
-              loggedIn={this.state.loggedIn}
-              routes={this.state.routes}
-              onLogin={this.handleLogin}
-              onLogout={this.handleLogout}
-            />
-            {this.state.routes.map(r => {
-              return <Route
-                       key={r}
-                       exact path={r}
-                       component={COMPONENT_MAP[r]}
-                     />;
-            })}
-          </>
-        </Router>
+        <TransitionGroup>
+          <CSSTransition
+            timeout={300}
+            className='fade'
+          >
+            <Router>
+              <>
+                <Header
+                  loggedIn={this.state.loggedIn}
+                  routes={this.state.routes}
+                  onLogin={this.handleLogin}
+                  onLogout={this.handleLogout}
+                />
+                <Switch>
+                  {this.state.routes.map(r => {
+                    return <Route
+                             key={r}
+                             exact path={r}
+                             component={COMPONENT_MAP[r]}
+                       />;
+                  })}
+                </Switch>
+              </>
+            </Router>
+          </CSSTransition>
+        </TransitionGroup>
       </div>
     );
   }
