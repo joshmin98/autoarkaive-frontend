@@ -146,6 +146,7 @@ class AutoArkaive extends Component {
 
 
   render() {
+    console.log("JOSHMINWASHERE");
     let content = this.state.fetchingClasses ?
         (
           <div className={this.props.classes.loading}>
