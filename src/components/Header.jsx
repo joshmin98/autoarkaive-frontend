@@ -133,7 +133,7 @@ class Header extends Component {
           Logout
         </Button> :
         <GoogleLogin
-          clientId="352877215320-vguc7fcht8kndnf6pbbmcp5na5l74uf5.apps.googleusercontent.com"
+          clientId="352877215320-4j3mohbdk8uvmav9gd7rfebpg245hs49.apps.googleusercontent.com"
           onSuccess={resp => this.handleLogin(resp)}
           buttonText='Login'
           className={this.props.classes.loginButton}
