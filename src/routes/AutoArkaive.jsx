@@ -44,7 +44,8 @@ class AutoArkaive extends Component {
       fetchingClasses: true,
       formModalOpen: false,
       addingClass: false,
-      classList: []
+      classList: [],
+      autoArkaiveClassList: []
     };
   }
 
@@ -120,9 +121,22 @@ class AutoArkaive extends Component {
     }).then(resp => {
       this.setState({
         classList: resp.data.classList,
-        fetchingClasses: false
       });
       console.log(this.state);
+    }).then(() => {
+      axios.get(SERVER, {
+        params: {
+          command: 'getAutoArkaiveClasses',
+          email: this.state.email
+        }
+      }).then(resp => {
+        console.log('IN GETAUTOArkaiveclasses', resp);
+        this.setState({
+          autoArkaiveClassList: resp.data.classes,
+          // ^ fields for this are: classname, courseCode, checkinStartTime
+          fetchingClasses: false
+        });
+      });
     });
   }
 
@@ -145,7 +159,7 @@ class AutoArkaive extends Component {
         (
           <div>
             <ClassTable
-              classList={this.state.classList}
+              classList={this.state.autoArkaiveClassList}
             />
             <IconButton
               className={this.props.classes.iconButton}

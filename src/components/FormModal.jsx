@@ -69,7 +69,7 @@ class FormModal extends Component {
           {this.props.instructions}
         </DialogContentText>
         {this.props.inputs.map((input, idx) => {
-          if(input == 'password') {
+          if(input === 'password') {
             return (
               <TextField
                 label={input}

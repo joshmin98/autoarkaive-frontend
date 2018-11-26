@@ -17,36 +17,36 @@ const team = [
   {
     name: 'Addison A.',
     role: 'Design and Frontend',
-    roleDescription: 'test',
-    bio: 'test',
+    roleDescription: 'Helped design the UI of the application.',
+    bio: 'CS',
     image: '../images/images/addison.jpg'
   },
   {
     name: 'Anna S.',
     role: 'Backend',
-    roleDescription: 'test',
-    bio: 'test',
-    image: '../images/images/addison.jpg'
+    roleDescription: 'Worked on setting up the database, communicating with the Android server, and user verification.',
+    bio: 'CECS',
+    image: '../images/images/anna.jpg'
   },
   {
     name: 'Jamie S.',
     role: 'Backend',
-    roleDescription: 'test',
-    bio: 'test',
+    roleDescription: 'Created the android interface for this project which spoofs and checks in to Arkaive',
+    bio: 'CECS',
     image: '../images/images/jamie.jpg'
   },
   {
     name: 'Josh M.',
     role: 'Fullstack',
-    roleDescription: 'test',
-    bio: 'test',
+    roleDescription: 'Created the frontend for this website! And also worked on the backend with communication to the frontend.',
+    bio: 'CS',
     image: '../images/images/joshmin.jpg'
   },
   {
     name: 'Sai A.',
     role: 'Backend',
-    roleDescription: 'test',
-    bio: 'test',
+    roleDescription: 'Worked on setting up the database, communicating with the Android server, and user verification.',
+    bio: 'CS',
     image: '../images/images/sai.jpg'
   }
 ];

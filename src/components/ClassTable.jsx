@@ -25,21 +25,16 @@ let ClassTable = props => {
       <Table className={props.classes.table}>
         <TableHead>
           <TableCell>Class</TableCell>
-          <TableCell>Location</TableCell>
           <TableCell>Time</TableCell>
           <TableCell>Course Code</TableCell>
         </TableHead>
         <TableBody>
           {props.classList.map((row, idx) => {
-            let time = row.time ? row.time : 'N/A';
-            let location = row.location ? row.location : 'N/A';
+            let time = row.checkinStartTime ? row.checkinStartTime : 'N/A';
             return (
               <TableRow key={idx}>
                 <TableCell scope='row'>
-                  {row.className}
-                </TableCell>
-                <TableCell scope='row'>
-                  {location}
+                  {row.classname}
                 </TableCell>
                 <TableCell scope='row'>
                   {time}
