@@ -71,8 +71,8 @@ class AutoArkaive extends Component {
 
   handleSubmit = values => {
     this.setState({ addingClass: true });
-    const className = values.class.split(' ')[0];
-    const code = values.class.split(' ')[1];
+    const className = values.class.split('+')[0];
+    const code = values.class.split('+')[1];
     const startTime = values['Start Time'];
     const endTime = values['End Time'];
     const address = values['Address'];

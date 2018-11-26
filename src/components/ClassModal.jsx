@@ -119,7 +119,7 @@ class ClassModal extends Component {
                 return (
                   <MenuItem
                     key={idx}
-                    value={`${c.className} ${c.courseCode}`}
+                    value={`${c.className}+${c.courseCode}`}
                   >
                     {c.className} - {c.courseCode}
                   </MenuItem>
