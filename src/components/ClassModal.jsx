@@ -151,8 +151,13 @@ class ClassModal extends Component {
           <div/>
           <TextField
             className={this.props.classes.addressTextField}
-            label='Address'
-            onChange={this.handleTextChange('Address')}
+            label='Latitude (Decimal Format)'
+            onChange={this.handleTextChange('Latitude')}
+          />
+          <TextField
+            className={this.props.classes.addressTextField}
+            label='Longitude (Decimal Format)'
+            onChange={this.handleTextChange('Longitude')}
           />
         </form>
         <DialogActions>

@@ -76,34 +76,31 @@ class AutoArkaive extends Component {
     const startTime = values['Start Time'];
     const endTime = values['End Time'];
     const address = values['Address'];
-    axios.get(
-      `http://www.mapquestapi.com/geocoding/v1/address?key=${KEY}&location=${address}`
-    ).then(resp => {
-      resp = resp.data.results[0].locations[0].latLng;
-      const lat = resp.lat;
-      const long = resp.lng;
-      // Adding class to server
-      axios.get(SERVER, {
-        params: {
-          command: 'addClass',
-          email: this.state.email,
-          fullname: this.state.name,
-          classname: className,
-          courseCode: code,
-          checkinStartTime: startTime,
-          checkinEndTime: endTime,
-          latitude: lat,
-          longitude: long,
-          altitude: 60
-        }
-      }).then(resp => {
-        resp = resp.data;
-        if(resp.classWasAdded) {
-          this.fetchClasses();
-        } else {
-          alert('Error: Could not add class!');
-        }
-      });
+    const lat = values['Latitude'];
+    const long = values['Longitude'];
+    console.log(lat, long);
+    axios.get(SERVER, {
+      params: {
+        command: 'addClass',
+        email: this.state.email,
+        fullname: this.state.name,
+        classname: className,
+        courseCode: code,
+        checkinStartTime: startTime,
+        checkinEndTime: endTime,
+        latitude: lat,
+        longitude: long,
+        altitude: 60
+      }
+    }).then(resp => {
+      console.log(resp);
+      return;
+      resp = resp.data;
+      if(resp.classWasAdded) {
+        this.fetchClasses();
+      } else {
+        alert('Error: Could not add class!');
+      }
     });
     this.setState({
       formModalOpen: false,
@@ -146,7 +143,6 @@ class AutoArkaive extends Component {
 
 
   render() {
-    console.log("JOSHMINWASHERE");
     let content = this.state.fetchingClasses ?
         (
           <div className={this.props.classes.loading}>
