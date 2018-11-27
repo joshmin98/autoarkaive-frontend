@@ -103,6 +103,7 @@ class AutoArkaive extends Component {
       formModalOpen: false,
       addingClass: false
     });
+    this.fetchClasses();
   }
 
   fetchClasses = () => {
