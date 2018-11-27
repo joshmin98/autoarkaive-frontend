@@ -9,8 +9,6 @@ import { SERVER } from '../App';
 import ClassModal from '../components/ClassModal';
 import ClassTable from '../components/ClassTable';
 
-const KEY = '0ai9qdntEc0rkNBwAprbHsVAbWpgVOMM';
-
 const styles = theme => ({
   progress: {
     margin: theme.spacing.unit * 2,
@@ -75,7 +73,6 @@ class AutoArkaive extends Component {
     const code = values.class.split('+')[1];
     const startTime = values['Start Time'];
     const endTime = values['End Time'];
-    const address = values['Address'];
     const lat = values['Latitude'];
     const long = values['Longitude'];
     console.log(lat, long);
