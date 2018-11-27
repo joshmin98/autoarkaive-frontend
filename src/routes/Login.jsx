@@ -9,11 +9,11 @@ import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
   logo: {
-    fontSize: 80,
+    fontSize: 60,
     padding: 15
   },
   card: {
-    maxWidth: 800
+    maxWidth: 600
   },
   cardMedia: {
     height: 0,

@@ -139,7 +139,7 @@ class Header extends Component {
           className={this.props.classes.loginButton}
         />;
 
-    LoginButton = this.state.arkaiveLoginModalOpen ?
+    LoginButton = this.state.arkaiveLoggingIn ?
       <CircularProgress
         className={this.props.classes.progress}
         color='inherit'
