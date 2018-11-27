@@ -51,11 +51,11 @@ class AutoArkaive extends Component {
 
   componentWillMount() {
     this.hydrateStateWithLocalStorage();
-    this.setState({ fetchingClasses: true });
-    this.fetchClasses();
   }
 
   componentDidMount() {
+    this.setState({ fetchingClasses: true });
+    this.fetchClasses();
   }
 
   hydrateStateWithLocalStorage = () => {
@@ -128,7 +128,6 @@ class AutoArkaive extends Component {
           email: this.state.email
         }
       }).then(resp => {
-        console.log('IN GETAUTOArkaiveclasses', resp);
         this.setState({
           autoArkaiveClassList: resp.data.classes,
           // ^ fields for this are: classname, courseCode, checkinStartTime
