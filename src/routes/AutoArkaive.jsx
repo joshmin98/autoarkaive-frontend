@@ -109,6 +109,7 @@ class AutoArkaive extends Component {
   }
 
   fetchClasses = () => {
+    console.log(this.state.email);
     this.setState({ fetchingClasses: true });
     axios.get(SERVER, {
       params: {
